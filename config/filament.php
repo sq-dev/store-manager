@@ -141,8 +141,7 @@ return [
         'namespace' => 'App\\Filament\\Widgets',
         'path' => app_path('Filament/Widgets'),
         'register' => [
-            // Widgets\AccountWidget::class,
-            // Widgets\FilamentInfoWidget::class,
+
         ],
     ],
 
@@ -218,7 +217,7 @@ return [
     |
     */
 
-    'favicon' => null,
+    'favicon' => public_path('favicon.ico'),
 
     /*
     |--------------------------------------------------------------------------
