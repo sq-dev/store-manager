@@ -19,16 +19,20 @@ class ClientResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
 
+    protected static ?string $navigationLabel = 'Клиенты';
+
+    protected static ?string $breadcrumb = 'Клиенты';
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Card::make([
                     TextInput::make('name')
-                        ->label('Ном')
+                        ->label('ФИО клиента')
                         ->required(),
                     TextInput::make('phone')
-                        ->label('Номери телефон')
+                        ->label('Номер телефона')
                         ->prefix('+992')
                         ->mask(
                             fn (TextInput\Mask $mask) => $mask
@@ -39,13 +43,13 @@ class ClientResource extends Resource
                         ->unique()
                         ->required(),
                     TextInput::make('address')
-                        ->label('Адреса')
+                        ->label('Адрес')
                         ->required(),
                     TextInput::make('email')
-                        ->label('Почтаи электрони')
+                        ->label('Эл. почта')
                         ->email(),
                     Textarea::make('comment')
-                        ->label('Кайд')
+                        ->label('Коментария')
                         ->columnSpan(2)
                 ])->columns(['sm' => 2])
             ]);
@@ -56,15 +60,15 @@ class ClientResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name')
-                    ->label('Ном'),
+                    ->label('ФИО клиента'),
                 TextColumn::make('phone')
-                    ->label('Номери телефон')
+                    ->label('Номер телефона')
                     ->prefix('+992 '),
                 TextColumn::make('address')
                     ->label('Адрес'),
                 TextColumn::make('email')
-                    ->default('Надорад')
-                    ->label('Почтаи электрони'),
+                    ->default('Не имеется')
+                    ->label('Эл. почта'),
             ])
             ->filters([
                 //
