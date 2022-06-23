@@ -40,14 +40,16 @@ class ClientResource extends Resource
                                 ->minValue(9)
                                 ->pattern('(000) 00-00-00')
                         )
-                        ->unique()
+                        ->unique(ignoreRecord:true)
                         ->required(),
+
                     TextInput::make('address')
                         ->label('Адрес')
                         ->required(),
                     TextInput::make('email')
                         ->label('Эл. почта')
-                        ->email(),
+                        ->email()
+                        ->unique(ignoreRecord:true),
                     Textarea::make('comment')
                         ->label('Коментария')
                         ->columnSpan(2)
@@ -61,11 +63,14 @@ class ClientResource extends Resource
             ->columns([
                 TextColumn::make('name')
                     ->label('ФИО клиента'),
+                    
                 TextColumn::make('phone')
                     ->label('Номер телефона')
                     ->prefix('+992 '),
+
                 TextColumn::make('address')
                     ->label('Адрес'),
+
                 TextColumn::make('email')
                     ->default('Не имеется')
                     ->label('Эл. почта'),
