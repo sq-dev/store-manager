@@ -23,6 +23,8 @@ class ClientResource extends Resource
 
     protected static ?string $breadcrumb = 'Клиенты';
 
+    protected static ?string $navigationGroup = 'Управление';
+    
     public static function form(Form $form): Form
     {
         return $form
@@ -63,7 +65,7 @@ class ClientResource extends Resource
             ->columns([
                 TextColumn::make('name')
                     ->label('ФИО клиента'),
-                    
+
                 TextColumn::make('phone')
                     ->label('Номер телефона')
                     ->prefix('+992 '),

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace app\http\controllers;
 
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Routing\Controller as BaseController;
+use illuminate\foundation\auth\access\authorizesrequests;
+use illuminate\foundation\bus\dispatchesjobs;
+use illuminate\foundation\validation\validatesrequests;
+use illuminate\routing\controller as basecontroller;
 
-class Controller extends BaseController
+class controller extends basecontroller
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    use authorizesrequests, dispatchesjobs, validatesrequests;
 }
